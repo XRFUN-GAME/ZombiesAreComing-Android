@@ -6,6 +6,7 @@
 - **导出时间**：2026-11-16
 - **包名**：com.xrfun.morigame ｜ **versionName**：1.1.1 ｜ **versionCode**：1
 - **目标 ABI**：arm64-v8a ｜ **minSdk**：29 ｜ **targetSdk**：35
+- **IL2CPP 状态**：✅ 已预编译（`libil2cpp.so` 在库），构建机不需要 NDK 和 IL2CPP 工具链
 
 ## 构建步骤
 
@@ -44,7 +45,7 @@ sdk.dir=/Users/xxx/Library/Android/sdk
 | JDK | 17 | Gradle 8.11 要求 |
 | Gradle | 8.11 | 无 gradlew，用系统 gradle 或 IDE 内置 |
 | Android SDK | compileSdk 35 / build-tools 34.0.0 | |
-| Android NDK | 27.2.12479018 | 可用 SDK Manager 安装，AGP 也可自动下载 |
+| ~~Android NDK~~ | 不需要 | **IL2CPP 已预编译**（`libil2cpp.so` 已入库），无需 NDK |
 
 > 提示：直接用 Unity Hub 安装 Unity 6000.0.49f1 时勾选 Android Build Support，JDK/SDK/NDK 会全部装好，版本与本工程完全匹配。
 
