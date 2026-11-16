@@ -1,0 +1,93 @@
+﻿#include "pch-c.h"
+
+
+#include "codegen/il2cpp-codegen-metadata.h"
+
+
+
+
+
+extern void EnableCameraDepthInForward_Start_mC97581E9417A88024D598924C6553DB48B2F347B (void);
+extern void EnableCameraDepthInForward_Set_mB760B71809B97FB46A2446B57050F7CE62EC9FC1 (void);
+extern void EnableCameraDepthInForward__ctor_m7188270676630E7F5A26AD5851093A57BC9DC7F7 (void);
+extern void Readme__ctor_m69C325C4C171DCB0312B646A9034AA91EA8C39C6 (void);
+extern void Section__ctor_m5F732533E4DFC0167D965E5F5DB332E46055399B (void);
+extern void ProjectileMove_Start_m0A601DE6E67E63A1C81DAD94EDE8F8FB29BC103D (void);
+extern void ProjectileMove_Update_mF7E7338F2489253A8ED276B053209CAE0A671C28 (void);
+extern void ProjectileMove_OnCollisionEnter_m06DC507728DDADA15387F1D6F4A2B4C5B7FD7C01 (void);
+extern void ProjectileMove__ctor_m239E81D8C40DC48592E27C88B8E181A73BD4C67E (void);
+extern void RotateToMouse_Update_m3E8720231894646508D279B0A2423860450D24BB (void);
+extern void RotateToMouse_RotateToMouseDirection_mC056D929F07B830E49E5F4E13184F89863839B85 (void);
+extern void RotateToMouse_GetRotation_m1CC6AD7230CF5F62959E82C7003B4EE9BDE47F8E (void);
+extern void RotateToMouse__ctor_m33B5F0356CB6E62CC03DA8BC036894F3DDA53A63 (void);
+extern void SpawnProjectiles_Start_mB584A52BBEA1D83C9A1BB13E194495ECDD9327BF (void);
+extern void SpawnProjectiles_Update_mEC40F935FF3CDD44711FE610B2A80B13146834AC (void);
+extern void SpawnProjectiles_SpawnEffects_mD6347E6FB10911DD1C574E74175E5EDDE44C6AFB (void);
+extern void SpawnProjectiles__ctor_mD708A2B06175BDFE7DB6013F9F0FC20052AB63B0 (void);
+extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033 (void);
+extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1 (void);
+static Il2CppMethodPointer s_methodPointers[19] = 
+{
+	EnableCameraDepthInForward_Start_mC97581E9417A88024D598924C6553DB48B2F347B,
+	EnableCameraDepthInForward_Set_mB760B71809B97FB46A2446B57050F7CE62EC9FC1,
+	EnableCameraDepthInForward__ctor_m7188270676630E7F5A26AD5851093A57BC9DC7F7,
+	Readme__ctor_m69C325C4C171DCB0312B646A9034AA91EA8C39C6,
+	Section__ctor_m5F732533E4DFC0167D965E5F5DB332E46055399B,
+	ProjectileMove_Start_m0A601DE6E67E63A1C81DAD94EDE8F8FB29BC103D,
+	ProjectileMove_Update_mF7E7338F2489253A8ED276B053209CAE0A671C28,
+	ProjectileMove_OnCollisionEnter_m06DC507728DDADA15387F1D6F4A2B4C5B7FD7C01,
+	ProjectileMove__ctor_m239E81D8C40DC48592E27C88B8E181A73BD4C67E,
+	RotateToMouse_Update_m3E8720231894646508D279B0A2423860450D24BB,
+	RotateToMouse_RotateToMouseDirection_mC056D929F07B830E49E5F4E13184F89863839B85,
+	RotateToMouse_GetRotation_m1CC6AD7230CF5F62959E82C7003B4EE9BDE47F8E,
+	RotateToMouse__ctor_m33B5F0356CB6E62CC03DA8BC036894F3DDA53A63,
+	SpawnProjectiles_Start_mB584A52BBEA1D83C9A1BB13E194495ECDD9327BF,
+	SpawnProjectiles_Update_mEC40F935FF3CDD44711FE610B2A80B13146834AC,
+	SpawnProjectiles_SpawnEffects_mD6347E6FB10911DD1C574E74175E5EDDE44C6AFB,
+	SpawnProjectiles__ctor_mD708A2B06175BDFE7DB6013F9F0FC20052AB63B0,
+	UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033,
+	UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1,
+};
+static const int32_t s_InvokerIndices[19] = 
+{
+	14345,
+	14345,
+	14345,
+	14345,
+	14345,
+	14345,
+	14345,
+	10916,
+	14345,
+	14345,
+	5611,
+	14186,
+	14345,
+	14345,
+	14345,
+	14345,
+	14345,
+	24561,
+	14345,
+};
+IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
+const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
+{
+	"Assembly-CSharp.dll",
+	19,
+	s_methodPointers,
+	0,
+	NULL,
+	s_InvokerIndices,
+	0,
+	NULL,
+	0,
+	NULL,
+	0,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+};

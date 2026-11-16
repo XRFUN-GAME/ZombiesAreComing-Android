@@ -1,0 +1,16 @@
+# 本机路径配置（用 local.properties.template 代替）
+local.properties
+
+# 构建输出
+.gradle/
+build/
+launcher/build/
+unityLibrary/build/
+*.apk
+*.aab
+
+# IDE
+.idea/
+*.iml
+.cxx/
+.externalNativeBuild/
