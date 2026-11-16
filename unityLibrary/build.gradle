@@ -131,6 +131,10 @@ android {
             outputs.file GetIl2CppOutputPath(workingDir, abi)
             outputs.file GetIl2CppSymbolPath(workingDir, abi)
         }
+        // 已预编译时跳过：libil2cpp.so 已存在则不再调用 il2cpp 工具链
+        onlyIf {
+            !file(GetIl2CppOutputPath(workingDir, 'arm64-v8a')).exists()
+        }
         doLast {
             archs.each { arch, abi ->
                 BuildIl2CppImpl(workingDir, 'Release', arch, abi, staticLibs[arch] as String[]);
