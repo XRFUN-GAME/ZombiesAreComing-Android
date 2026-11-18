@@ -148,6 +148,50 @@ android {
         if (project(':unityLibrary').tasks.findByName('mergeReleaseJniLibFolders'))
             project(':unityLibrary').mergeReleaseJniLibFolders.dependsOn buildIl2Cpp
     }
+
+    // VibeLab: data.unity3d 超 GitHub 100MB 限制，仓库中以分片存放（vibelab-parts/）。
+    // 本任务在构建前自动将分片按序拼接还原，并通过 sha256 校验完整性（纯 Groovy，不调用外部工具）。
+    tasks.register('vibelabRestoreDataUnity3d') {
+        def partsDir = new File(rootDir, 'vibelab-parts')
+        def target = new File(projectDir, 'src/main/assets/bin/Data/data.unity3d')
+        def expectedLen = 156767985L
+        def expectedSha = '8e78ad90de028a827572c16c1d54a795e3bdc86c7093d2c39d113c55ff65388d'
+        onlyIf {
+            def need = !target.exists() || target.length() != expectedLen
+            if (need) {
+                def parts = ['data.unity3d.part-00', 'data.unity3d.part-01'].collect { new File(partsDir, it) }
+                if (parts.every { it.exists() }) { return true }
+                println '[vibelab] 还原条件不满足且分片缺失: parts=' + parts.findAll { !it.exists() }.collect { it.name }
+            }
+            return false
+        }
+        doLast {
+            def parts = ['data.unity3d.part-00', 'data.unity3d.part-01'].collect { new File(partsDir, it) }
+            parts.each { p ->
+                if (!p.exists()) { throw new GradleException("[vibelab] 分片缺失: ${p}") }
+            }
+            println '[vibelab] 拼接分片 -> data.unity3d ...'
+            target.parentFile.mkdirs()
+            new FileOutputStream(target).withCloseable { out ->
+                parts.each { p -> p.withInputStream { ins -> ins.transferTo(out) } }
+            }
+            def md = java.security.MessageDigest.getInstance('SHA-256')
+            target.withInputStream { ins ->
+                def buf = new byte[8192]
+                int n
+                while ((n = ins.read(buf)) > 0) { md.update(buf, 0, n) }
+            }
+            def actual = md.digest().collect { String.format('%02x', it) }.join()
+            println "[vibelab] data.unity3d size=${target.length()} sha256=${actual}"
+            if (actual != expectedSha) {
+                target.delete()
+                throw new GradleException("[vibelab] sha256 校验失败: ${actual}")
+            }
+            println '[vibelab] data.unity3d 还原并校验通过'
+        }
+    }
+
+    tasks.named('preBuild') { dependsOn tasks.named('vibelabRestoreDataUnity3d') }
     sourceSets {
         main {
             jni.srcDirs = ["src/main/Il2CppOutputProject"]
